@@ -1,22 +1,21 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+  background: linear-gradient(to bottom left,rgb(24, 109, 237),rgb(141, 31, 250));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Poppins',sans-serif;
 }
 
-.App-link {
-  color: #09d3ac;
+.header
+{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: rgb(231,146,18);
+  background: linear-gradient(to top right, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+

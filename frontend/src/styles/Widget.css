@@ -1,0 +1,19 @@
+.widget
+{
+    background: linear-gradient(to top right,rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+    min-width: 18rem;
+    min-height: 13rem;
+    margin: 2rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.text
+{
+    font-weight: bold;
+    font-size: 2rem;
+    background: linear-gradient(to bottom left,rgb(24, 109, 237),rgb(141, 31, 250));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
