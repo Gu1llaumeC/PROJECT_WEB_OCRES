@@ -1,11 +1,18 @@
 .widget
 {
     background: linear-gradient(to top right,rgba(255,255,255,0.7), rgba(255,255,255,0.3));
-    min-width: 18rem;
     min-height: 13rem;
+    min-width: 17rem;
     margin: 2rem;
     border-radius: 2rem;
     text-align: center;
+    transition: 5s;
+    flex: 1;
+}
+
+.widget:hover
+{
+    background: linear-gradient(to bottom left,rgba(255,255,255,0.5), rgba(255,255,255,0.1));
 }
 
 .text
