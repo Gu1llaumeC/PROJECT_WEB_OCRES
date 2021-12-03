@@ -7,12 +7,12 @@ export default class Main extends React.Component{
 
         return(
             <div class = "main">
-                <Widget text = "widget 1"/>
-                <Widget text = "widget 2"/>
-                <Widget text = "widget 3"/>
-                <Widget text = "widget 4"/>
-                <Widget text = "widget 5"/>
-                <Widget text = "widget 6"/>
+                <Widget text = "widget" id = "1"/>
+                <Widget text = "widget" id = "2"/>
+                <Widget text = "widget" id = "3"/>
+                <Widget text = "widget" id = "4"/>
+                <Widget text = "widget" id = "5"/>
+                <Widget text = "widget" id = "6"/>
             </div>
         )
     }
