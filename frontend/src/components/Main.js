@@ -1,5 +1,7 @@
 import React from 'react';
 import Widget from './Widget';
+import Widget1 from './Widget1';
+import Widget2 from './Widget2';
 import '../styles/Main.css';
 
 export default class Main extends React.Component{
@@ -7,8 +9,8 @@ export default class Main extends React.Component{
 
         return(
             <div class = "main">
-                <Widget text = "widget" id = "1"/>
-                <Widget text = "widget" id = "2"/>
+                <Widget1 text = "widget" id = "1"/>
+                <Widget2 text = "widget" id = "2"/>
                 <Widget text = "widget" id = "3"/>
                 <Widget text = "widget" id = "4"/>
                 <Widget text = "widget" id = "5"/>

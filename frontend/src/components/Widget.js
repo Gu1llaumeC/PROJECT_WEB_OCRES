@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Widget.css';
-import axios from 'axios';
 
 export default class Widget extends React.Component{
 
@@ -9,11 +8,7 @@ export default class Widget extends React.Component{
         super(props);
         this.state = 
         {
-            text : this.props.text,
-            id : this.props.id,
-            data : {},
-            URL : "",
-            
+            text : this.props.text
         }
         this.handleClick = this.handleClick.bind(this);
 
@@ -22,43 +17,6 @@ export default class Widget extends React.Component{
 
     componentDidMount()
     {
-        if (this.state.id === "1")
-        {
-            axios.get(`https://api.spoonacular.com/recipes/random?apiKey=85cf351fc9a04e419477c3c7bc5d1a69`)
-        .then(res => 
-            {
-                this.setState(state => (
-                    {
-                        data : res.data,
-                        URL : res.data.recipes[0].spoonacularSourceUrl
-                    }
-                ));
-            })
-        }
-        else
-        {
-            axios.get(`https://api.spoonacular.com/recipes/random?apiKey=85cf351fc9a04e419477c3c7bc5d1a69`)
-        .then(res => 
-            {
-                this.setState(state => (
-                    {
-                        data : res.data,
-                    }
-                ));
-            })
-        }
-
-        /*axios.get(`https://api.spoonacular.com/recipes/random?apiKey=85cf351fc9a04e419477c3c7bc5d1a69`)
-        .then(res => 
-            {
-                this.setState(state => (
-                    {
-                        data : res.data,
-                        URL : res.data.recipes[0].spoonacularSourceUrl
-                    }
-                ));
-            })*/
-
         
     }
 
@@ -78,10 +36,9 @@ export default class Widget extends React.Component{
         return(
             <div class = "widget">
                 <div class = "text">
-                    {this.state.text} {this.state.id}
+                    {this.state.text} {this.props.id}
                 </div>
-                <button onClick = {this.handleClick}>Clique ici espèce FDP!!!</button>
-                <div>{this.state.URL}</div>
+                <button onClick = {this.handleClick}>Clique ici espèce de FDP!!!</button>
             </div>
         )
     }
