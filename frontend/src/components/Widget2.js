@@ -18,6 +18,7 @@ export default class Widget2 extends React.Component{
 
         }
         this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
 
         
     }
@@ -74,9 +75,9 @@ export default class Widget2 extends React.Component{
                     {this.props.text} {this.props.id}
                 </div>
                 <input type = "text" value = {this.state.city} onChange={event => this.handleChange(event)}/>
-                <button onClick = {this.handleClick}>Clique ici!!!</button>
+                <button onClick = {this.handleClick}>Click here!!</button>
                 <div className = "city-name">{this.state.previous}</div>
-                <img src = {this.state.URL} alt = "forecast"/>
+                <img className = "forecast-icon" src = {this.state.URL} alt = "forecast"/>
                 <div className = "main-forecast">{this.state.main}</div>
                 <div className = "description-forecast">{this.state.descritpion}</div>
                 <div className = "temp-forecast">{this.state.temp}°C</div>
