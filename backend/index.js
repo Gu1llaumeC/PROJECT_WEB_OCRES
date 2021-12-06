@@ -3,17 +3,23 @@ const bodyParser= require('body-parser');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const { request } = require('express');
-require('./DB_ConfigMongo');
+require('./config/db');
 const postsRoutes = require('./OpController');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv').config({path : './config/.env'});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/', postsRoutes);
 app.use(cors());
 
-app.listen(3000, () => console.log('Listening on 3000'));
+
+
+
+
+
+app.listen(process.env.PORT, () => console.log(`Listening on ${process.env.PORT}`));
 
 /*const test2 = require("./routes/test");
 app.use('/test', test2);*/
