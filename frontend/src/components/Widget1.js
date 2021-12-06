@@ -60,8 +60,8 @@ export default class Widget1 extends React.Component{
     render(){
 
         return(
-            <div class = "widget">
-                <div class = "text">
+            <div className = "widget">
+                <div className = "text">
                     {this.props.text} {this.props.id}
                 </div>
                 <div className = "title">{this.state.title}</div>

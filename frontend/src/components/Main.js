@@ -9,7 +9,7 @@ export default class Main extends React.Component{
     render(){
 
         return(
-            <div class = "main">
+            <div className = "main">
                 <Widget1 text = "widget" id = "1"/>
                 <Widget2 text = "widget" id = "2"/>
                 <Widget3 text = "widget" id = "3"/>

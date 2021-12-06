@@ -34,8 +34,8 @@ export default class Widget extends React.Component{
     render(){
 
         return(
-            <div class = "widget">
-                <div class = "text">
+            <div className = "widget">
+                <div className = "text">
                     {this.state.text} {this.props.id}
                 </div>
                 <button onClick = {this.handleClick}>Clique ici espèce de FDP!!!</button>
