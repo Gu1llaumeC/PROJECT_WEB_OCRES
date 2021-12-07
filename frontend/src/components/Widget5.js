@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Widget.css';
+import axios from "axios";
 
 export default class Widget5 extends React.Component {
 
@@ -7,7 +8,7 @@ export default class Widget5 extends React.Component {
         super(props);
         this.state =
         {
-            text: this.props.text
+            URL : ""
         }
         this.handleClick = this.handleClick.bind(this);
 
@@ -15,6 +16,14 @@ export default class Widget5 extends React.Component {
     }
 
     componentDidMount() {
+        axios.get("https://api.nasa.gov/planetary/apod?api_key=bFOhUhZ2aMLmzM7zNLn1RT1ktmHbYc9eZa6TQf1d")
+        .then(res => (
+            this.setState(state => (
+                {
+                    URL : res.data.url
+                }
+            ))
+        ))
 
     }
 
@@ -33,9 +42,12 @@ export default class Widget5 extends React.Component {
         return (
             <div className="widget">
                 <div className="text">
-                    {this.state.text} {this.props.id}
+                    {this.props.text} {this.props.id}
                 </div>
-                <button onClick={this.handleClick}>Clique ici espèce de FDP!!!</button>
+                <div>
+                    Astronomy Picture Of the Day
+                    <img src = {this.state.URL} alt = "Astronomy Pic Of the Day" width = "250" height = "auto"/>
+                </div>
             </div>
         )
     }
