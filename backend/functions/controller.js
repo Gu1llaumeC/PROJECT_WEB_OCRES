@@ -21,6 +21,11 @@ module.exports.getRandom = async(req, res) => {
     res.status(200).json(quotes[rand_i]);
 }
 
+module.exports.getAll = async(req, res) => {
+    const quotes = await QuoteModel.find().select();
+    res.status(200).json(quotes);
+}
+
 module.exports.delete = async(req,res) => {
     if (!ObjectID.isValid(req.params.id))
     return res.status(400).send('ID unknown : ' + req.params.id)

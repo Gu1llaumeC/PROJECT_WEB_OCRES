@@ -1,5 +1,13 @@
 .main
 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-nav
+{
+
     background: linear-gradient(to top right,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
     color: white;
     display: flex;
@@ -13,5 +21,4 @@
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
-
 
