@@ -15,6 +15,7 @@ export default class Widget4 extends React.Component{
             usable : []
         }
         this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.function = this.function.bind(this);
         this.generate_data = this.generate_data.bind(this);
     }
@@ -61,13 +62,15 @@ export default class Widget4 extends React.Component{
 
     handleClick()
     {
-        axios.get(``)
+        axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&appid=4081444b7b90198136fefe6ed4ccf35b`)
         .then(res => 
             {
-                this.setState(state => (
+                this.setState( state => (
                     {
+                        data : res.data,
                     }
                 ));
+                this.generate_data()
             })
     }
 
@@ -95,6 +98,11 @@ export default class Widget4 extends React.Component{
         }
     }
 
+    handleChange(event)
+    {
+        this.setState({city : event.target.value})
+    }
+
     render(){
 
         return(
@@ -103,6 +111,8 @@ export default class Widget4 extends React.Component{
                     {this.props.text} {this.props.id}
                 </div>
                 <div>
+                <input type = "text" value = {this.state.city} onChange={event => this.handleChange(event)}/>
+                <button onClick = {this.handleClick}>Click here!!</button>
                     {this.function()}
                 </div>
             </div>

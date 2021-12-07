@@ -3,87 +3,66 @@ import '../styles/Widget.css';
 import axios from 'axios';
 
 
-export default class Widget3 extends React.Component{
+export default class Widget3 extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props);
-        this.state = 
+        this.state =
         {
-            name : "Figth club",
-            genre : "Thriller",
-            description : "Endowed with a most enviable situation, a young man at the end of his nerves finds a relative balance in the company of Marla, met in a support group. He also meets Tyler Durden, an enthusiastic and charismatic character",
-            number : 542
+            name: "Figth club",
+            description: "Endowed with a most enviable situation, a young man at the end of his nerves finds a relative balance in the company of Marla, met in a support group. He also meets Tyler Durden, an enthusiastic and charismatic character",
+            URL : ""
         }
         this.handleClick = this.handleClick.bind(this);
 
-        
+
     }
 
-    componentDidMount()
-    {
-        axios.get(`https://api.themoviedb.org/3/movie/${this.state.number}?api_key=cb7b71798e366579c516ae45aeddfd75`)
-        .then(res => 
-            {
+    componentDidMount() {
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=cb7b71798e366579c516ae45aeddfd75&language=en-US&page=1`)
+            .then(res => {
+                var rand = Math.floor(Math.random() * res.data.results.length);
                 this.setState(state => (
                     {
-                        name : res.data.original_title,
-                        genre : res.data.genres[0].name,
-                        description : res.data.overview
+                        name: res.data.results[rand].original_title,
+                        description: res.data.results[rand].overview,
+                        URL : `https://image.tmdb.org/t/p/w500${res.data.results[rand].poster_path}`
                     }
                 ))
             })
 
     }
 
-
     handleClick()
     {
-        
-        do{
-            const random = Math.random() * (560 - 501) + 500;
-            this.setState({number : Math.trunc(random)}); 
-        }while(this.state.number !== 514 & 515 & 516 & 517 & 518 & 519 & 520 & 528 & 529 & 534 & 535 & 536 & 537 & 538 & 539 & 545 & 556 & 558 & 559);
-        console.log(this.state.number)
-        
-        if (this.state.number === 538){
-            this.setState(state => (
-                {
-                    number : 547
-                }
-            ));
-        }
-        
-        axios.get(`https://api.themoviedb.org/3/movie/${this.state.number}?api_key=cb7b71798e366579c516ae45aeddfd75`)
-        .then(res => 
-            {
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=cb7b71798e366579c516ae45aeddfd75&language=en-US&page=1`)
+            .then(res => {
+                var rand = Math.floor(Math.random() * res.data.results.length);
                 this.setState(state => (
                     {
-                        name : res.data.original_title,
-                        genre : res.data.genres[0].name,
-                        description : res.data.overview
+                        name: res.data.results[rand].title,
+                        description: res.data.results[rand].overview,
+                        URL : `https://image.tmdb.org/t/p/w500${res.data.results[rand].poster_path}`
                     }
-                ));
-                console.log(res)
+                ))
             })
-        .catch(function (error){
-            console.log(error);
-        });
     }
 
 
-    render(){
+    
 
-        return(
-            <div className = "widget">
-                <div className = "text">
+
+    render() {
+
+        return (
+            <div className="widget">
+                <div className="text">
                     {this.props.text} {this.props.id}
                 </div>
-                <button onClick = {this.handleClick}>Aléatoire</button>
-                <div className = "city-name">{this.state.name}</div>
-                <div className = "genre">{this.state.genre}</div>
-                <div className = "description-widget3">{this.state.description}</div>
-
+                <div className="name">{this.state.name}</div>
+                <img src = {this.state.URL} alt = "film-poster" height = "200" width = "auto"/>
+                <div className="police">{this.state.description}</div>
+                <button onClick={this.handleClick}>Aléatoire</button>
             </div>
         )
     }

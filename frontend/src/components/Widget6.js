@@ -74,7 +74,7 @@ export default class Widget6 extends React.Component{
                 <div className = "text">
                     {this.props.text} {this.props.id}
                 </div>
-                <div className = "description-widget3">{this.state.quote}</div>
+                <div className = "police">{this.state.quote}</div>
                 <button onClick = {this.handleClick}>Aléatoire</button>
                 <button onClick = {this.handleClick_2}>Delete</button>
             </div>

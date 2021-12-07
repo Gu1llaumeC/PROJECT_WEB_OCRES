@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Widget.css';
+import '../styles/Widget_Admin.css';
 import axios from 'axios';
 
 export default class WidgetAdmin extends React.Component {
@@ -36,11 +36,9 @@ export default class WidgetAdmin extends React.Component {
     render() {
 
         return (
-            <div className="widget">
-                <div className="text">
-                </div>
-                <div className="quote">{this.state.quote}</div>
-                <button onClick={this.handleClick}>Delete</button>
+            <div className="widget-admin">
+                <div className="quote-admin">{this.state.quote}</div>
+                <button className = "button-admin" onClick={this.handleClick}>Delete</button>
             </div>
         )
     }

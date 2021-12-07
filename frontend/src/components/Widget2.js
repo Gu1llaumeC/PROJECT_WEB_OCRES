@@ -74,13 +74,13 @@ export default class Widget2 extends React.Component{
                 <div className = "text">
                     {this.props.text} {this.props.id}
                 </div>
-                <input type = "text" value = {this.state.city} onChange={event => this.handleChange(event)}/>
+                <input className = "police" type = "text" value = {this.state.city} onChange={event => this.handleChange(event)}/>
                 <button onClick = {this.handleClick}>Click here!!</button>
-                <div className = "city-name">{this.state.previous}</div>
+                <div className = "police">{this.state.previous}</div>
                 <img className = "forecast-icon" src = {this.state.URL} alt = "forecast"/>
-                <div className = "main-forecast">{this.state.main}</div>
-                <div className = "description-forecast">{this.state.descritpion}</div>
-                <div className = "temp-forecast">{this.state.temp}°C</div>
+                <div className = "police">{this.state.main}</div>
+                <div className = "police">{this.state.descritpion}</div>
+                <div className = "police">{this.state.temp}°C</div>
 
             </div>
         )

@@ -5,7 +5,7 @@
     justify-content: center;
 }
 
-.main-nav
+.main-main
 {
 
     background: linear-gradient(to top right,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
@@ -22,3 +22,63 @@
     margin-bottom: 2rem;
 }
 
+
+
+.main-nav
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button
+{
+    border-radius: 2rem;
+    background: linear-gradient(to bottom left,rgb(24, 109, 237),rgb(141, 31, 250));
+    color : white;
+    border: none;
+    margin: 0.3rem;
+}
+
+
+
+.nav-button
+{
+    font-family: 'Poppins';
+    font-size: 1rem;
+}
+
+input
+{
+    transition: 0.5s;
+    border-radius: 2rem;
+}
+
+input:hover
+{
+    padding: 1rem;
+}
+
+button
+{
+    transition: 0.5s;
+}
+
+button:hover
+{
+    padding: 1rem;
+}
+
+img
+{
+    border-radius: 1rem;
+}
+
+.police
+{
+    font-weight: bold;
+    background: linear-gradient(to bottom left,rgb(24, 109, 237),rgb(141, 31, 250));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

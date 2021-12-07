@@ -64,16 +64,16 @@ export default class Widget1 extends React.Component{
                 <div className = "text">
                     {this.props.text} {this.props.id}
                 </div>
-                <div className = "title">{this.state.title}</div>
+                <div className = "police">{this.state.title}</div>
                 <img src={this.state.image} alt="recipe" width="250" height="auto"/>
-                <div className = "prepa_time">
+                <div className = "police">
                     ready in {this.state.prepa_time} minuntes
                     </div>
-                <div className = "servings">
+                <div className = "police">
                     perfect for {this.state.servings} persons
                     </div>
                 <a href={this.state.URL}>
-                    <button>
+                    <button className = "police">
                         Click here to see the full recipe
                     </button>
                 </a>

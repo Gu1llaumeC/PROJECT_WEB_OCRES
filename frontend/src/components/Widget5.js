@@ -44,7 +44,7 @@ export default class Widget5 extends React.Component {
                 <div className="text">
                     {this.props.text} {this.props.id}
                 </div>
-                <div>
+                <div className="police">
                     Astronomy Picture Of the Day
                     <img src = {this.state.URL} alt = "Astronomy Pic Of the Day" width = "250" height = "auto"/>
                 </div>

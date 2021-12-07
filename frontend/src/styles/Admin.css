@@ -1,0 +1,28 @@
+.admin
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map-admin
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-admin
+{
+    font-family: 'Poppins';
+    font-size: 1rem;
+    width: 30rem;
+
+}
+
+.input-button
+{
+    font-family: 'Poppins';
+    font-size: 1rem;
+    
+}
