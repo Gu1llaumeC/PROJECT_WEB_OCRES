@@ -49,8 +49,8 @@ export default class Admin extends React.Component {
         return (
             <div className="admin">
                 <div className="add">
-                    <input className = "input-admin" type="text" value={this.state.text} onChange={event => this.handleChange(event)} />
-                    <button className = "input-button" onClick={this.handleClick}>Add</button>
+                    <input className="input-admin" type="text" value={this.state.text} onChange={event => this.handleChange(event)} />
+                    <button className="input-button" onClick={this.handleClick}>Add</button>
                 </div>
                 <div className="map-admin">{this.state.data.map(quote =>
                 (

@@ -8,7 +8,7 @@ export default class Widget5 extends React.Component {
         super(props);
         this.state =
         {
-            URL : ""
+            URL: ""
         }
         this.handleClick = this.handleClick.bind(this);
 
@@ -17,13 +17,13 @@ export default class Widget5 extends React.Component {
 
     componentDidMount() {
         axios.get("https://api.nasa.gov/planetary/apod?api_key=bFOhUhZ2aMLmzM7zNLn1RT1ktmHbYc9eZa6TQf1d")
-        .then(res => (
-            this.setState(state => (
-                {
-                    URL : res.data.url
-                }
+            .then(res => (
+                this.setState(state => (
+                    {
+                        URL: res.data.url
+                    }
+                ))
             ))
-        ))
 
     }
 
@@ -46,7 +46,7 @@ export default class Widget5 extends React.Component {
                 </div>
                 <div className="police">
                     Astronomy Picture Of the Day
-                    <img src = {this.state.URL} alt = "Astronomy Pic Of the Day" width = "250" height = "auto"/>
+                    <img src={this.state.URL} alt="Astronomy Pic Of the Day" width="250" height="auto" />
                 </div>
             </div>
         )

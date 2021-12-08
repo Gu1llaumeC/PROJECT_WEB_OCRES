@@ -6,9 +6,9 @@ export default class WidgetAdmin extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = 
+        this.state =
         {
-            quote : this.props.quote
+            quote: this.props.quote
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -16,9 +16,7 @@ export default class WidgetAdmin extends React.Component {
 
     }
 
-    componentDidMount() {
-        console.log(this.props);
-    }
+
 
 
 
@@ -38,7 +36,7 @@ export default class WidgetAdmin extends React.Component {
         return (
             <div className="widget-admin">
                 <div className="quote-admin">{this.state.quote}</div>
-                <button className = "button-admin" onClick={this.handleClick}>Delete</button>
+                <button className="button-admin" onClick={this.handleClick}>Delete</button>
             </div>
         )
     }

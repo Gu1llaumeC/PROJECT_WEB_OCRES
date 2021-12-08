@@ -4,79 +4,70 @@ import axios from 'axios';
 
 
 
-export default class Widget6 extends React.Component{
+export default class Widget6 extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props);
-        this.state = 
+        this.state =
         {
-            quote : "Veuillez charger une histoire",
-            id : ""
+            quote: "Veuillez charger une histoire",
+            id: ""
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleClick_2 = this.handleClick_2.bind(this);
 
-        
+
     }
 
-    componentDidMount()
-    {
+    componentDidMount() {
         axios.get(`http://localhost:3001/api/quote/random`)
-        .then(res => 
-            {
-                console.log(res);
+            .then(res => {
                 this.setState(state => (
                     {
-                        quote : res.data.content,
-                        id : res.data._id
+                        quote: res.data.content,
+                        id: res.data._id
                     }
                 ))
             })
     }
 
 
-    handleClick()
-    {
+    handleClick() {
         axios.get(`http://localhost:3001/api/quote/random`)
-        .then(res => 
-            {
-                console.log(res);
+            .then(res => {
                 this.setState(state => (
                     {
-                        quote : res.data.content,
-                        id : res.data._id
+                        quote: res.data.content,
+                        id: res.data._id
                     }
                 ));
             })
     }
 
-    handleClick_2()
-    {
+    handleClick_2() {
         axios.delete(`http://localhost:3001/api/quote/delete/${this.state.id}`)
-        .then(res => 
-            {
+            .then(res => {
                 this.setState(state => (
                     {
-                        quote : res.data.message
+                        quote: res.data.message
                     }
                 ));
             })
-        
+
     }
 
-   
 
-    render(){
 
-        return(
-            <div className = "widget">
-                <div className = "text">
+    render() {
+
+        return (
+            <div className="widget">
+                <div className="text">
                     {this.props.text} {this.props.id}
                 </div>
-                <div className = "police">{this.state.quote}</div>
-                <button onClick = {this.handleClick}>Aléatoire</button>
-                <button onClick = {this.handleClick_2}>Delete</button>
+                <div className="police">{this.state.quote}</div>
+                <button onClick={this.handleClick}>Aléatoire</button>
+                <button onClick={this.handleClick_2}>Delete</button>
             </div>
         )
     }

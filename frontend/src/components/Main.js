@@ -29,7 +29,7 @@ export default class Main extends React.Component {
                         <button className="nav-button" onClick={this.handleClick}>Main</button>
                         <button className="nav-button" onClick={this.handleClick_2}>Admin</button>
                     </div>
-                    <div className = "main-nav">
+                    <div className="main-nav">
                         <Widget1 text="widget" id="1" />
                         <Widget2 text="widget" id="2" />
                         <Widget3 text="widget" id="3" />

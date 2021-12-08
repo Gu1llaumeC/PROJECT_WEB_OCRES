@@ -2,78 +2,73 @@ import React from 'react';
 import '../styles/Widget.css';
 import axios from 'axios';
 
-export default class Widget1 extends React.Component{
+export default class Widget1 extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props);
-        this.state = 
+        this.state =
         {
-            URL : "",
-            image : "",
-            prepa_time : "",
-            servings : "",
-            title : ""
+            URL: "",
+            image: "",
+            prepa_time: "",
+            servings: "",
+            title: ""
 
         }
         this.handleClick = this.handleClick.bind(this);
 
-        
+
     }
 
-    componentDidMount()
-    {
+    componentDidMount() {
         axios.get(`https://api.spoonacular.com/recipes/random?apiKey=85cf351fc9a04e419477c3c7bc5d1a69`)
-        .then(res => 
-            {
+            .then(res => {
                 this.setState(state => (
                     {
-                        URL : res.data.recipes[0].spoonacularSourceUrl,
-                        image : res.data.recipes[0].image,
-                        prepa_time : res.data.recipes[0].readyInMinutes,
-                        servings : res.data.recipes[0].servings,
-                        title : res.data.recipes[0].title
+                        URL: res.data.recipes[0].spoonacularSourceUrl,
+                        image: res.data.recipes[0].image,
+                        prepa_time: res.data.recipes[0].readyInMinutes,
+                        servings: res.data.recipes[0].servings,
+                        title: res.data.recipes[0].title
                     }
                 ));
             })
     }
 
-    
 
-    handleClick()
-    {
+
+    handleClick() {
         axios.get(`https://api.spoonacular.com/recipes/random?apiKey=85cf351fc9a04e419477c3c7bc5d1a69`)
-        .then(res => 
-            {
+            .then(res => {
                 this.setState(state => (
                     {
-                        URL : res.data.recipes[0].spoonacularSourceUrl,
-                        image : res.data.recipes[0].image,
-                        prepa_time : res.data.recipes[0].readyInMinutes,
-                        servings : res.data.recipes[0].servings,
-                        title : res.data.recipes[0].title
+                        URL: res.data.recipes[0].spoonacularSourceUrl,
+                        image: res.data.recipes[0].image,
+                        prepa_time: res.data.recipes[0].readyInMinutes,
+                        servings: res.data.recipes[0].servings,
+                        title: res.data.recipes[0].title
                     }
                 ));
             })
     }
 
-    render(){
+    render() {
 
-        return(
-            <div className = "widget">
-                <div className = "text">
+        return (
+            <div className="widget">
+                <div className="text">
                     {this.props.text} {this.props.id}
                 </div>
-                <div className = "police">{this.state.title}</div>
-                <img src={this.state.image} alt="recipe" width="250" height="auto"/>
-                <div className = "police">
+                <div className="police">{this.state.title}</div>
+                <img src={this.state.image} alt="recipe" width="250" height="auto" />
+                <div className="police">
                     ready in {this.state.prepa_time} minuntes
-                    </div>
-                <div className = "police">
+                </div>
+                <div className="police">
                     perfect for {this.state.servings} persons
-                    </div>
+                </div>
                 <a href={this.state.URL}>
-                    <button className = "police">
+                    <button className="police">
                         Click here to see the full recipe
                     </button>
                 </a>
