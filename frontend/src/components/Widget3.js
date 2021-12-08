@@ -24,7 +24,7 @@ export default class Widget3 extends React.Component {
                 var rand = Math.floor(Math.random() * res.data.results.length);
                 this.setState(state => (
                     {
-                        name: res.data.results[rand].original_title,
+                        name: res.data.results[rand].title,
                         description: res.data.results[rand].overview,
                         URL: `https://image.tmdb.org/t/p/w500${res.data.results[rand].poster_path}`
                     }

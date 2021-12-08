@@ -21,7 +21,7 @@ export default class WidgetAdmin extends React.Component {
 
 
     handleClick() {
-        axios.delete(`http://localhost:3001/api/quote/delete/${this.props.id}`)
+        axios.delete(`http://192.168.1.15:3001/api/quote/delete/${this.props.id}`)
             .then(res => {
                 this.setState(state => (
                     {

@@ -19,7 +19,7 @@ export default class Admin extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:3001/api/quote/")
+        axios.get("http://192.168.1.15:3001/api/quote/")
             .then(res => {
                 this.setState(state => (
                     {
@@ -34,7 +34,7 @@ export default class Admin extends React.Component {
     }
 
     handleClick() {
-        axios.post(`http://localhost:3001/api/quote/add`, { content: this.state.text })
+        axios.post(`http://192.168.1.15:3001/api/quote/add`, { content: this.state.text })
             .then(res => {
                 this.setState(state => (
                     {
