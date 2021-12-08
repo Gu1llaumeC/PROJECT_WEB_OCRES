@@ -58,10 +58,10 @@ export default class Widget3 extends React.Component {
                 <div className="text">
                     {this.props.text} {this.props.id}
                 </div>
-                <div className="name">{this.state.name}</div>
+                <div className="film-title">{this.state.name}</div>
                 <img src={this.state.URL} alt="film-poster" height="200" width="auto" />
                 <div className="police">{this.state.description}</div>
-                <button onClick={this.handleClick}>Aléatoire</button>
+                <button onClick={this.handleClick}>Random</button>
             </div>
         )
     }

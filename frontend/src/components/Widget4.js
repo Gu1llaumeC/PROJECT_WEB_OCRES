@@ -10,7 +10,7 @@ export default class Widget4 extends React.Component {
         this.state =
         {
             data: {},
-            city: "Cape town",
+            city: "Paris",
             usable: []
         }
         this.handleClick = this.handleClick.bind(this);
@@ -26,7 +26,7 @@ export default class Widget4 extends React.Component {
         var deg = {};
         var buffer = [];
 
-        for (var i = 0; i < 40; i++) {
+        for (var i = 0; i < 6; i++) {
             name = this.state.data.list[i].dt_txt.split(' ')[1];
             name = name.split(':')[0];
             speed = this.state.data.list[i].wind.speed;

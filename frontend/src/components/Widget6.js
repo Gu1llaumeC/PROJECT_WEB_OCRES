@@ -14,7 +14,6 @@ export default class Widget6 extends React.Component {
             id: ""
         }
         this.handleClick = this.handleClick.bind(this);
-        this.handleClick_2 = this.handleClick_2.bind(this);
 
 
     }
@@ -44,17 +43,7 @@ export default class Widget6 extends React.Component {
             })
     }
 
-    handleClick_2() {
-        axios.delete(`http://localhost:3001/api/quote/delete/${this.state.id}`)
-            .then(res => {
-                this.setState(state => (
-                    {
-                        quote: res.data.message
-                    }
-                ));
-            })
-
-    }
+    
 
 
 
@@ -67,7 +56,6 @@ export default class Widget6 extends React.Component {
                 </div>
                 <div className="police">{this.state.quote}</div>
                 <button onClick={this.handleClick}>Aléatoire</button>
-                <button onClick={this.handleClick_2}>Delete</button>
             </div>
         )
     }

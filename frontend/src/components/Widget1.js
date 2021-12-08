@@ -21,7 +21,7 @@ export default class Widget1 extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`https://api.spoonacular.com/recipes/random?apiKey=85cf351fc9a04e419477c3c7bc5d1a69`)
+        axios.get(`https://api.spoonacular.com/recipes/random?apiKey=a105e4bc0ec64e1581964a3a80b24859`)
             .then(res => {
                 this.setState(state => (
                     {
@@ -38,7 +38,7 @@ export default class Widget1 extends React.Component {
 
 
     handleClick() {
-        axios.get(`https://api.spoonacular.com/recipes/random?apiKey=85cf351fc9a04e419477c3c7bc5d1a69`)
+        axios.get(`https://api.spoonacular.com/recipes/random?apiKey=a105e4bc0ec64e1581964a3a80b24859`)
             .then(res => {
                 this.setState(state => (
                     {
@@ -62,13 +62,13 @@ export default class Widget1 extends React.Component {
                 <div className="police">{this.state.title}</div>
                 <img src={this.state.image} alt="recipe" width="250" height="auto" />
                 <div className="police">
-                    ready in {this.state.prepa_time} minuntes
+                    ready in {this.state.prepa_time} minutes
                 </div>
                 <div className="police">
                     perfect for {this.state.servings} persons
                 </div>
                 <a href={this.state.URL}>
-                    <button className="police">
+                    <button>
                         Click here to see the full recipe
                     </button>
                 </a>
